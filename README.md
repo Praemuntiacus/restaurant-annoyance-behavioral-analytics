@@ -16,7 +16,9 @@ This repository presents a quantitative exploratory analysis of $\sim 900$ publi
 
 ## Key Results & Visualization
 
-![Top Restaurant Annoyances: Men vs. Women](RESTAURANT.png)
+<p align="center">
+  <img src="RESTAURANT.png" alt="Top Restaurant Annoyances: Men vs. Women" width="65%" />
+</p>
 
 ### Key Behavioral Insights:
 1. **Sensory Prioritization & Child Noise:**
@@ -31,21 +33,36 @@ This repository presents a quantitative exploratory analysis of $\sim 900$ publi
    * Violations of implicit social rules (bad table manners at $\sim 20\%$) and commercial baselines (poor service, intrusive phone calls, and staff disrespect) carried nearly identical statistical weight across genders, functioning as universal violations of shared norms.
 
 ---
-### 🧪 Data Pipeline & NLP Annotation Strategy
+# Prompt Template for Text Classification
 
-To process ~$900$ open-ended social media comments into a structured dataset, a **Human-in-the-Loop (HITL) LLM-assisted classification workflow** was employed:
+1. **Gender Inference:**
+   * Infer responder gender (`M` or `F`) based on the provided name; extract the first name for data auditing purposes and drop all surnames to guarantee respondent anonymization.
+   * If gender cannot be determined with high confidence, flag as `NULL` / `Unknown`.
 
-* **Taxonomy Formulation:** Prompts were engineered to establish mutually exclusive category definitions (`Sensory Triggers`, `Social Density`, `Etiquette Violations`, `Service Quality`).
-* **Categorical Mapping:** An LLM was utilized for zero-shot text classification, parsing unstructured natural language entries into standardized categorical labels.
-* **Validation & Auditing:** Automated classifications were manually spot-checked and audited against physical ground truth to correct misinterpretations, sarcasm, and edge cases prior to statistical analysis.
+2. **Multi-Factor Normalization (1-to-Many Explode Rule):**
+   * Analyze the comment text for one or more reported annoyance factors.
+   * If a respondent cites multiple annoyances, create a distinct record for **each** identified factor while preserving the original respondent metadata (Name, Inferred Gender).
+
+3. **Closed Taxonomy Classification:**
+   * Map each extracted annoyance strictly to one of the following six closed categories:
+     - `Noisy kids`
+     - `People/the public`
+     - `Bad manners`
+     - `Bad service`
+     - `Phone calls in public`
+     - `Bad attitude to servers`
+**Constraint:** Provide results in CSV format.
+---
 
 ## Data & Qualitative Classification Methodology
 
 The original dataset comprised unstructured open-ended survey entries (~900 records). An AI-assisted qualitative coding framework was implemented to extract structured parameters:
 
-1. **Taxonomy Generation:** Using structured prompt engineering, raw text entries were mapped into mutually exclusive analytical categories (`Sensory Triggers`, `Social Density`, `Etiquette Violations`, `Service Quality`).
-2. **Data Wrangling & Standardization:** Python (`pandas`) was used to clean string data, encode demographic variables, and compute proportional cross-tabulations.
-3. **Visualization:** Custom `Seaborn` scripts were written to render publication-grade comparative bar charts.
+1. **Taxonomy Formulation:** Using structured prompt engineering, raw text entries were mapped into mutually exclusive analytical categories (`Sensory Triggers`, `Social Density`, `Etiquette Violations`, `Service Quality`).
+2. **Categorical Mapping:** An LLM was utilized for zero-shot text classification, parsing unstructured natural language entries into standardized categorical labels.
+3. **Validation & Auditing:** Automated classifications were manually spot-checked and audited against physical ground truth to correct misinterpretations, sarcasm, and edge cases prior to statistical analysis.
+4. **Data Wrangling & Standardization:** Python (`pandas`) was used to clean string data, encode demographic variables, and compute proportional cross-tabulations.
+5. **Visualization:** Custom `Seaborn` scripts were written to render publication-grade comparative bar charts.
 
 ---
 
