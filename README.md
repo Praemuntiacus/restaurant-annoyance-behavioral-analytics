@@ -33,10 +33,10 @@ This repository presents a quantitative exploratory analysis of $\sim 900$ publi
    * Violations of implicit social rules (bad table manners at $\sim 20\%$) and commercial baselines (poor service, intrusive phone calls, and staff disrespect) carried nearly identical statistical weight across genders, functioning as universal violations of shared norms.
 
 ---
-# Prompt Template for Text Classification
+## Prompt Template for Text Classification
 
 1. **Gender Inference:**
-   * Infer responder gender (`M` or `F`) based on the provided name; extract the first name for data auditing purposes and drop all surnames to guarantee respondent anonymization.
+   * Infer responder gender (`M` or `F`) based on the provided name; extract the first name for data auditing purposes and drop middle and second names to guarantee respondent anonymization.
    * If gender cannot be determined with high confidence, flag as `NULL` / `Unknown`.
 
 2. **Multi-Factor Normalization (1-to-Many Explode Rule):**
