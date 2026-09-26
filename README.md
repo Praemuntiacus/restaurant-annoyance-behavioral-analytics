@@ -31,6 +31,13 @@ This repository presents a quantitative exploratory analysis of $\sim 900$ publi
    * Violations of implicit social rules (bad table manners at $\sim 20\%$) and commercial baselines (poor service, intrusive phone calls, and staff disrespect) carried nearly identical statistical weight across genders, functioning as universal violations of shared norms.
 
 ---
+### 🧪 Data Pipeline & NLP Annotation Strategy
+
+To process ~$900$ open-ended social media comments into a structured dataset, a **Human-in-the-Loop (HITL) LLM-assisted classification workflow** was employed:
+
+* **Taxonomy Formulation:** Prompts were engineered to establish mutually exclusive category definitions (`Sensory Triggers`, `Social Density`, `Etiquette Violations`, `Service Quality`).
+* **Categorical Mapping:** An LLM was utilized for zero-shot text classification, parsing unstructured natural language entries into standardized categorical labels.
+* **Validation & Auditing:** Automated classifications were manually spot-checked and audited against physical ground truth to correct misinterpretations, sarcasm, and edge cases prior to statistical analysis.
 
 ## Data & Qualitative Classification Methodology
 
