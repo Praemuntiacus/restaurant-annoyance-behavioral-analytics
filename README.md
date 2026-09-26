@@ -16,7 +16,7 @@ This repository presents a quantitative exploratory analysis of $\sim 900$ publi
 
 ## Key Results & Visualization
 
-![Top Restaurant Annoyances: Men vs. Women]([(https://github.com/Praemuntiacus/restaurant-annoyance-behavioral-analytics/blob/main/RESTAURANT.png])
+![Top Restaurant Annoyances: Men vs. Women](RESTAURANT.png)
 
 ### Key Behavioral Insights:
 1. **Sensory Prioritization & Child Noise:**
