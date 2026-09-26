@@ -1,7 +1,7 @@
 
 > [!NOTE]
-> **Abstract**  
 > A quantitative exploratory analysis of 900 public responses regarding restaurant environment annoyances. Bridging raw text wrangling, statistical validation, and behavioral science, the project investigates how sensory triggers, implicit social etiquette, and environmental density are filtered through distinct biological and demographic models.
+> 
 # Public Space Sensory Stressors & Behavioral Analytics
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square&logo=python)
