@@ -33,6 +33,18 @@ This repository presents a quantitative exploratory analysis of $\sim 900$ publi
    * Violations of implicit social rules (bad table manners at $\sim 20\%$) and commercial baselines (poor service, intrusive phone calls, and staff disrespect) carried nearly identical statistical weight across genders, functioning as universal violations of shared norms.
 
 ---
+
+## Data & Qualitative Classification Methodology
+
+The original dataset comprised unstructured open-ended survey entries (~900 records). An AI-assisted qualitative coding framework was implemented to extract structured parameters:
+
+1. **Taxonomy Formulation:** Using structured prompt engineering, raw text entries were mapped into mutually exclusive analytical categories (`Sensory Triggers`, `Social Density`, `Etiquette Violations`, `Service Quality`).
+2. **Categorical Mapping:** An LLM was utilized for zero-shot text classification, parsing unstructured natural language entries into standardized categorical labels.
+3. **Validation & Auditing:** Automated classifications were manually spot-checked and audited against physical ground truth to correct misinterpretations, sarcasm, and edge cases prior to statistical analysis.
+4. **Data Wrangling & Standardization:** Python (`pandas`) was used to clean string data, encode demographic variables, and compute proportional cross-tabulations.
+5. **Visualization:** Custom `Seaborn` scripts were written to render publication-grade comparative bar charts.
+
+---
 ## Prompt Template for Text Classification
 
 1. **Gender Inference:**
@@ -56,18 +68,6 @@ This repository presents a quantitative exploratory analysis of $\sim 900$ publi
 
 ---
 
-## Data & Qualitative Classification Methodology
-
-The original dataset comprised unstructured open-ended survey entries (~900 records). An AI-assisted qualitative coding framework was implemented to extract structured parameters:
-
-1. **Taxonomy Formulation:** Using structured prompt engineering, raw text entries were mapped into mutually exclusive analytical categories (`Sensory Triggers`, `Social Density`, `Etiquette Violations`, `Service Quality`).
-2. **Categorical Mapping:** An LLM was utilized for zero-shot text classification, parsing unstructured natural language entries into standardized categorical labels.
-3. **Validation & Auditing:** Automated classifications were manually spot-checked and audited against physical ground truth to correct misinterpretations, sarcasm, and edge cases prior to statistical analysis.
-4. **Data Wrangling & Standardization:** Python (`pandas`) was used to clean string data, encode demographic variables, and compute proportional cross-tabulations.
-5. **Visualization:** Custom `Seaborn` scripts were written to render publication-grade comparative bar charts.
-
----
-
 ## Repository Roadmap & Project Status
 
 - [x] **Data Collection & Categorization:** ~900 survey records processed.
@@ -77,18 +77,3 @@ The original dataset comprised unstructured open-ended survey entries (~900 reco
 - [x] 📥 **Download / View Dataset:** [restaurant_annoyances_data.csv](./facebook_restaurant_annoyances.csv).
 
 ---
-
-## Project Structure
-
-```text
-restaurant-annoyance-behavioral-analytics/
-├── data/
-│   ├── raw/                      <- [Pending] Anonymized survey exports
-│   └── processed/                <- [Pending] Categorized dataset CSV
-├── notebooks/
-│   ├── 01_data_cleaning.ipynb    <- [Pending] Data cleaning & NLP pipeline
-│   └── 02_eda_visualization.ipynb <- [Pending] Proportional analysis & Seaborn scripts
-├── visuals/
-│   └── RESTAURANT.png            <- Published comparative distribution plot
-├── README.md                     <- Project homepage
-└── LICENSE                       <- MIT License
