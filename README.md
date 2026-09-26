@@ -47,7 +47,7 @@ The original dataset comprised unstructured open-ended survey entries (~900 reco
 - [x] **Data Collection & Categorization:** ~900 survey records processed.
 - [x] **Exploratory Data Analysis & Visualization:** Proportional gender splits computed and plotted.
 - [x] **Project Brief & Overview:** Published via `README.md`.
-- [ ] **Codebase Organization:** Uploading Jupyter Notebooks (`01_data_cleaning.ipynb`, `02_eda_visualization.ipynb`).
+- [x] 📓 **Jupyter Notebook:** [Restaurant.ipynb](./Restaurant.ipynb).
 - [x] 📥 **Download / View Dataset:** [restaurant_annoyances_data.csv](./facebook_restaurant_annoyances.csv).
 
 ---
